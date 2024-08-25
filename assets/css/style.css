@@ -16,6 +16,27 @@
     transition: color 0.3s ease, opacity 0.3s ease;
     opacity: 0;
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling for the progress ring */
+.progress-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    z-index: 0;
+}
+
+/* Styling for the circle inside the progress ring */
+.progress-ring__circle {
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
 }
 
 /* Styling for a badge with skills or qualifications */
@@ -99,4 +120,36 @@ a::after {
 
 a:hover::after {
     opacity: 1;
+}
+
+/* Style the overall scrollbar */
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 16px;
+}
+
+/* Style the track (part of the scrollbar not covered by the thumb) */
+::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 16px;
+}
+
+/* Style the draggable part of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 16px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Style the thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background: #454545;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+/* Style the thumb when active (being dragged) */
+::-webkit-scrollbar-thumb:active {
+    background-color: #3D3D3D;
+    border-radius: 16px;
 }

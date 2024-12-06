@@ -1,3 +1,11 @@
+body {
+    /* Disable text selection on the entire webpage */
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer */
+    user-select: none;          /* Standard syntax */
+}
+
 /* General styling for navigation links */
 .nav-link {
     padding: 0.5rem 1rem;

@@ -62,3 +62,41 @@ fixedBottomRight.addEventListener('click', function (e) {
         behavior: 'smooth'
     });
 });
+
+// Disable the right-click context menu on the webpage
+document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+});
+
+// Disable key combinations to open developer tools
+document.addEventListener('keydown', (event) => {
+    // Check if Ctrl or Command key is pressed with the "C" key
+    if ((event.ctrlKey || event.metaKey) && event.key === 'c') {
+        event.preventDefault(); // Prevent the copy action
+    }
+
+    // Check if the "F12" key is pressed
+    if (event.key === 'F12') {
+        event.preventDefault(); // Prevent the action
+    }
+
+    // Check for Ctrl+Shift+I or Cmd+Shift+I (to open DevTools)
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'I') {
+        event.preventDefault(); // Prevent the action
+    }
+
+    // Check for Ctrl+Shift+C or Cmd+Shift+C (to inspect elements)
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'C') {
+        event.preventDefault(); // Prevent the action
+    }
+
+    // Check for Ctrl+Shift+J or Cmd+Shift+J (to open DevTools console)
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'J') {
+        event.preventDefault(); // Prevent the action
+    }
+
+    // Check for Ctrl+U or Cmd+U (to view page source)
+    if ((event.ctrlKey || event.metaKey) && event.key === 'U') {
+        event.preventDefault(); // Prevent the action
+    }
+});
